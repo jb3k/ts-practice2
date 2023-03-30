@@ -1,10 +1,17 @@
+import './words.css'
 
+function HangmanWords() {
 
-function HangmanWords(){
-
+    const test = "test"
+    let guessedLetters = []
     return (
-        <div>
-        </div>
+        <div className="word-container">
+            {test.split('').map((letter, i) => (
+                <span style={{ borderBottom: ".1em solid black" }} key={i}>
+                    <span className="right-letter">{letter} </span>
+                </span>
+            ))}
+        </ div>
     )
 
 }

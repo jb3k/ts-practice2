@@ -1,0 +1,14 @@
+.word-container {
+    display: flex;
+    gap: .25em;
+    font-size: 6rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    font-family: monospace;
+}
+
+.game-letter {
+    border-bottom: .1em solid black;
+
+}
+
