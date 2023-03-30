@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import './App.css'
-import HangmanImage from './hangManImg';
+import HangmanImage from './HangmanImage';
 import wordList from './wordList.json'
 
 function App() {
@@ -12,10 +12,12 @@ function App() {
 
 
   return (
-    <>
-      <div> hi</div>
-      
-    </>
+    <div className='main-page'>
+
+      <div className='game-text'> WIN LOSE </div>
+      <HangmanImage />
+
+    </div>
   )
 }
 

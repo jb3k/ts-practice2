@@ -2,7 +2,10 @@
 
 function HangmanWords(){
 
-
+    return (
+        <div>
+        </div>
+    )
 
 }
 
