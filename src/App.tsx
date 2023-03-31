@@ -13,12 +13,10 @@ function getWord() {
 function App() {
 
   const [wordToGuess, setWordToGuess] = useState(getWord);
-  //creating an arra
+  //creating an array
   const [guessedLetters, setGuessedLetters] = useState<string[]>([]);
 
-  let incorrectLetters = guessedLetters.filter(letter => {
-    !wordToGuess.includes(letter)
-  })
+  let incorrectLetters = guessedLetters.filter(letter => !wordToGuess.includes(letter))
 
   // because the amount of body parts is 6
   const isLoser = incorrectLetters.length >= 6
@@ -33,6 +31,7 @@ function App() {
 
   }, [guessedLetters, isWinner, isLoser])
 
+  //to add to guessed letters when you type on keys
   useEffect(() => {
     const handler = (e: KeyboardEvent) => {
       let key = e.key
@@ -41,11 +40,8 @@ function App() {
 
       e.preventDefault()
       addGuessedLetter(key)
-
     }
-
     document.addEventListener('keypress', handler)
-
     return () => {
       document.removeEventListener('keypress', handler)
     }
@@ -57,14 +53,11 @@ function App() {
     const handler = (e: KeyboardEvent) => {
       const key = e.key
       if (key !== "Enter") return
-
       e.preventDefault()
       setGuessedLetters([])
       setWordToGuess(getWord())
     }
-
     document.addEventListener("keypress", handler)
-
     return () => {
       document.removeEventListener("keypress", handler)
     }
