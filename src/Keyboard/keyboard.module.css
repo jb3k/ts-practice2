@@ -1,11 +1,5 @@
-.keyboard-container {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(75px, 1fr));
-    gap: .5rem;
-}
-
 .btn {
-    width: 10%;
+    width: 100%;
     border: 3px solid black;
     background: none;
     aspect-ratio: 1 / 1;

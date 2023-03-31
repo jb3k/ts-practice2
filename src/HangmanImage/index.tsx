@@ -31,7 +31,7 @@ function HangmanImage({ numberOfGuesses }: HangmanImageProp) {
 
     return (
         <>
-            <div className='page'>
+            <div style={{ position: "relative" }}>
                 {BODY_PARTS.slice(0, numberOfGuesses)}
                 <div className="headbar"></div>
                 <div className="topbar"></div>

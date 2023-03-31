@@ -77,3 +77,8 @@ Winning Conditions:
 1. Loser if they reach the max number of guesses
 2. Winner if they guess all the words in the Word to guess
     - every function :  tests whether all elements in the array pass the test implemented by the provided function. It returns a Boolean value.
+
+
+    Notes: 
+    1. This use effect is there to refresh the game once you finish by hitting the return key.
+    

@@ -3,7 +3,7 @@ import './words.css'
 type HangManWordProp = {
     guessedLetters: string[]
     wordToGuess: string
-    reveal: boolean
+    reveal?: boolean
 }
 
 
