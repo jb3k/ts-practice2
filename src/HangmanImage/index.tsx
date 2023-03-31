@@ -19,15 +19,20 @@ const R_LEG = (
     <div className='right-leg' />
 )
 
+type HangmanImageProp = {
+    numberOfGuesses: number
+}
 
-function HangmanImage() {
+const BODY_PARTS = [HEAD, BODY, R_ARM, L_ARM, R_LEG, L_LEG]
+
+
+function HangmanImage({ numberOfGuesses }: HangmanImageProp) {
 
 
     return (
         <>
             <div className='page'>
-                {HEAD}
-                {BODY}{R_ARM}{L_ARM}{R_LEG}{L_LEG}
+                {BODY_PARTS.slice(0, numberOfGuesses)}
                 <div className="headbar"></div>
                 <div className="topbar"></div>
                 <div className="midbar"></div>

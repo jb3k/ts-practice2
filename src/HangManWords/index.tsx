@@ -1,14 +1,30 @@
 import './words.css'
 
-function HangmanWords() {
+type HangManWordProp = {
+    guessedLetters: string[]
+    wordToGuess: string
+    reveal: boolean
+}
 
-    const test = "test"
-    let guessedLetters = []
+
+function HangmanWords({ guessedLetters, wordToGuess, reveal = false }: HangManWordProp) {
+
     return (
         <div className="word-container">
-            {test.split('').map((letter, i) => (
+            {wordToGuess.split('').map((letter, i) => (
                 <span style={{ borderBottom: ".1em solid black" }} key={i}>
-                    <span className="right-letter">{letter} </span>
+                    <span
+                        style={{
+                            visibility:
+                                guessedLetters.includes(letter) || reveal
+                                    ? "visible"
+                                    : "hidden",
+                            color:
+                                !guessedLetters.includes(letter) && reveal ? "red" : "green",
+                        }}
+                    >
+                        {letter}
+                    </span>
                 </span>
             ))}
         </ div>
